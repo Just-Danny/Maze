@@ -3,17 +3,15 @@
 <head>
     <script src="Java/maze.js"></script>
 </head>
-<body>
+<body onkeydown="specifickey(event)">
 
 <table id="level1" style="width: 300px; height: 300px; background-color: green;">
     <tr>
-        <td>
-            <img src="image/bcircle.png" style="width: 50px; height: 50px;">
-        </td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-        <td>5</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
 <tr>
     <td></td>
@@ -46,6 +44,6 @@
 
     
 </table>
-
+<button onclick="game()">Start</button>
 </body>
 </html>
