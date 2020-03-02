@@ -21,13 +21,7 @@ function game()
 var temp2= level[x][y]; 
  document.body.style.backgroundColor ="blue";
 //makes walls black
-<<<<<<< HEAD
- for( x=0;x<=4;x++)
-    {
-         if (temp2 == "wall")
-=======
  if (temp2 == "wall")
->>>>>>> master
         {
    //key = false;
     document.getElementsByName("level1")[0].style.backgroundColor="black";
@@ -67,8 +61,4 @@ function specifickey(event)
         
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> master
