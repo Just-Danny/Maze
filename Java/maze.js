@@ -1,3 +1,4 @@
+//level1
 var level= 
 [
     ["wall","2","3","4","5"],
@@ -6,21 +7,29 @@ var level=
     ["16","wall","18","19","wall"],
     ["21","wall","wall","wall","wall"]
 ];
-//var player=  level[y][x];
-
+//var player=  level[2][2];
+//console.log(player);
+//var key =false;//Flag
 var x,y,temp;
 temp=0;
 x=0;
 y=0;
 function game()
 {
-var temp2= level[y][x]; 
+ document.getElementById("player").style.backgroundColor = "red";
+
+var temp2= level[x][y]; 
  document.body.style.backgroundColor ="blue";
 //makes walls black
+<<<<<<< HEAD
  for( x=0;x<=4;x++)
     {
          if (temp2 == "wall")
+=======
+ if (temp2 == "wall")
+>>>>>>> master
         {
+   //key = false;
     document.getElementsByName("level1")[0].style.backgroundColor="black";
     document.getElementsByName("level1")[1].style.backgroundColor="black";
     document.getElementsByName("level1")[2].style.backgroundColor="black";
@@ -30,29 +39,36 @@ var temp2= level[y][x];
     document.getElementsByName("level1")[6].style.backgroundColor="black";
     document.getElementsByName("level1")[7].style.backgroundColor="black";
     document.getElementsByName("level1")[8].style.backgroundColor="black";
+    document.getElementsByName("level1")[9].style.backgroundColor="black";
         }
-            //}
-    //}
 }
-var x,y,temp;
-temp=0;
+ //var x,y,temp3;
+ //temp3=0;
 
 function specifickey(event)
 {
-    x=temp;y=0;
+    var player=  level[2][2];
+    var Nplayer= player;
+    console.log("player:"+player)
+    console.log("x"+x+"y"+y);
+
     var z=event.key;
-    for( x=0;x<=4;x+=1)
+    for( var x=0;x<=4;x+=1)
     {
-    for( y=0;y<=4;y+=0)
+    for( var y=0;y<=4;y+=1)
         {
         if(z=="D"||z=="d")
             {
-        x+=1;
-        temp =x;        
+        y+=0;
+        x+=0;
         console.log(level[y][x]);
-        x=5;y=5;
+        
             }
         
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
