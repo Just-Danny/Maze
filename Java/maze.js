@@ -17,11 +17,9 @@ function game()
 var temp2= level[y][x]; 
  document.body.style.backgroundColor ="blue";
 //makes walls black
- //for( x=0;x<=4;x++)
-    //{
-        //for(y=0;y<=4;y++)
-            //{
- if (temp2 == "wall")
+ for( x=0;x<=4;x++)
+    {
+         if (temp2 == "wall")
         {
     document.getElementsByName("level1")[0].style.backgroundColor="black";
     document.getElementsByName("level1")[1].style.backgroundColor="black";
@@ -58,4 +56,3 @@ function specifickey(event)
         }
     }
 }
-
