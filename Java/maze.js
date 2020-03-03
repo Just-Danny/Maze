@@ -11,6 +11,8 @@ var level=
 //console.log(player);
 //var key =false;//Flag
 var x,y,temp;
+var player=  level[2][2];
+    var Nplayer= player;
 temp=0;
 x=0;
 y=0;
@@ -34,31 +36,53 @@ var temp2= level[x][y];
     document.getElementsByName("level1")[7].style.backgroundColor="black";
     document.getElementsByName("level1")[8].style.backgroundColor="black";
     document.getElementsByName("level1")[9].style.backgroundColor="black";
+
         }
+        x=2;
+        y=2;
 }
  //var x,y,temp3;
  //temp3=0;
 
 function specifickey(event)
 {
-    var player=  level[2][2];
-    var Nplayer= player;
-    console.log("player:"+player)
-    console.log("x"+x+"y"+y);
+    
+    //console.log("player:"+player)
+    //console.log("x"+x+"y"+y);
 
     var z=event.key;
-    for( var x=0;x<=4;x+=1)
-    {
-    for( var y=0;y<=4;y+=1)
-        {
-        if(z=="D"||z=="d")
+    if(z=="D"||z=="d")
             {
         y+=0;
-        x+=0;
-        console.log(level[y][x]);
-        
+        x+=1;
+        console.log(player);
+        player= level[y][x];
+        console.log(player);
+        document.getElementById("player").style.backgroundColor="red";
             }
-        
-        }
+    else if(z=="A" || z=="a")
+    {
+        y+=0;
+        x-=1;
+        player= level[y][x];
+        console.log(player);
+        document.getElementById("player").style.backgroundColor="red";
     }
+    else if(z=="W" || z=="w")
+    {
+        y-=1;
+        x+=0;
+        player= level[y][x];
+        console.log(player);
+        document.getElementById("player").style.backgroundColor="red";
+    }
+    else if(z=="S" || z=="s")
+    {
+        y+=1;
+        x+=0;
+        player= level[y][x];
+        console.log(player);
+        document.getElementById("player").style.backgroundColor="red";
+    }
+    
 }
