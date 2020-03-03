@@ -55,10 +55,14 @@ function specifickey(event)
             {
         y+=0;
         x+=1;
-        console.log(player);
+        //console.log(player);
         player= level[y][x];
         console.log(player);
-        //document.getElementById().style.backgroundColor="red";
+        var tag = "r" +x+ "c"+y;
+        currentID = x.id;
+        currentPosX = currentId[2];
+        currentPosY = currentId[4];
+        document.getElementById(tag).style.backgroundColor="red";
             }
     else if(z=="A" || z=="a")
     {
