@@ -58,7 +58,7 @@ function specifickey(event)
         console.log(player);
         player= level[y][x];
         console.log(player);
-        document.getElementById("player").style.backgroundColor="red";
+        //document.getElementById().style.backgroundColor="red";
             }
     else if(z=="A" || z=="a")
     {
@@ -66,7 +66,7 @@ function specifickey(event)
         x-=1;
         player= level[y][x];
         console.log(player);
-        document.getElementById("player").style.backgroundColor="red";
+        //document.getElementById().style.backgroundColor="red";
     }
     else if(z=="W" || z=="w")
     {
@@ -74,7 +74,7 @@ function specifickey(event)
         x+=0;
         player= level[y][x];
         console.log(player);
-        document.getElementById("player").style.backgroundColor="red";
+        //document.getElementById("player").style.backgroundColor="red";
     }
     else if(z=="S" || z=="s")
     {
@@ -82,7 +82,6 @@ function specifickey(event)
         x+=0;
         player= level[y][x];
         console.log(player);
-        document.getElementById("player").style.backgroundColor="red";
+        //document.getElementById("player").style.backgroundColor="red";
     }
-    
 }
