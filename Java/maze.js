@@ -60,8 +60,8 @@ function specifickey(event)
         console.log(player);
         var tag = "r" +x+ "c"+y;
         currentID = x.id;
-        currentPosX = currentId[2];
-        currentPosY = currentId[4];
+        currentPosX = currentID[2];
+        currentPosY = currentID[4];
         document.getElementById(tag).style.backgroundColor="red";
             }
     else if(z=="A" || z=="a")
