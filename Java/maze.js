@@ -13,12 +13,15 @@ var level=
 var x,y,temp;
 var player=  level[2][2];
     var Nplayer= player;
+    var currentID,currentPosX,currentPosY;
 temp=0;
 x=0;
 y=0;
+var life= 3;
 function game()
 {
- document.getElementById("player").style.backgroundColor = "red";
+ document.getElementById("life").innerHTML ="3 lives";
+ document.getElementById("r3c3").style.backgroundColor = "red";
 
 var temp2= level[x][y]; 
  document.body.style.backgroundColor ="blue";
@@ -36,20 +39,23 @@ var temp2= level[x][y];
     document.getElementsByName("level1")[7].style.backgroundColor="black";
     document.getElementsByName("level1")[8].style.backgroundColor="black";
     document.getElementsByName("level1")[9].style.backgroundColor="black";
-
+    //alert("you hit a wall now you have 1 less life");
         }
+  if(player == "wall")
+  {
+      life-=1;
+      alert("you hit a wall, lose 1 life");
+      document.getElementById("life").innerText= life;
+  }
         x=2;
         y=2;
 }
  //var x,y,temp3;
  //temp3=0;
-
+var xx,yy;
 function specifickey(event)
 {
     
-    //console.log("player:"+player)
-    //console.log("x"+x+"y"+y);
-
     var z=event.key;
     if(z=="D"||z=="d")
             {
@@ -58,34 +64,83 @@ function specifickey(event)
         //console.log(player);
         player= level[y][x];
         console.log(player);
-        var tag = "r" +x+ "c"+y;
-        currentID = x.id;
-        currentPosX = currentID[2];
-        currentPosY = currentID[4];
+        xx=x+1;
+        yy=y+1;
+        var tag ="r"+yy+"c"+xx;
+        console.log(tag);
         document.getElementById(tag).style.backgroundColor="red";
             }
     else if(z=="A" || z=="a")
     {
         y+=0;
         x-=1;
+        xx=x+1;
+        yy=y+1;
+        var tag ="r"+yy+"c"+xx;
         player= level[y][x];
         console.log(player);
+        document.getElementById(tag).style.backgroundColor="red";
         //document.getElementById().style.backgroundColor="red";
     }
     else if(z=="W" || z=="w")
     {
         y-=1;
         x+=0;
+        xx=x+1;
+        yy=y+1;
+        var tag ="r"+yy+"c"+xx;
         player= level[y][x];
         console.log(player);
+        document.getElementById(tag).style.backgroundColor="red";
         //document.getElementById("player").style.backgroundColor="red";
     }
     else if(z=="S" || z=="s")
     {
         y+=1;
         x+=0;
+        xx=x+1;
+        yy=y+1;
+        var tag ="r"+yy+"c"+xx;
         player= level[y][x];
         console.log(player);
+        document.getElementById(tag).style.backgroundColor="red";
         //document.getElementById("player").style.backgroundColor="red";
     }
+    console.log(currentID);
+    console.log(y+""+x);
+    if(player == "wall")
+  {
+      life-=1;
+      alert("you hit a wall, lose 1 life");
+      document.getElementById("life").innerText= life;
+  }
+    if(life==0)
+    {
+        alert("you lose!");
+        location.reload();
+    }
+   /* for (a=0;x<5;x++)
+    {
+        for(b=0;y<5;y++)
+        {
+            player=level[b][a];
+            var win=player;
+            var marker = "r"+y+"c"+x;
+            var temper =document.getElementById(marker).style.backgroundColor;
+            if(win != "wall" && temper =="white")
+            {
+                alert("you Win");
+            }
+        }
+    }*/
 }
+
+ function identify(x)
+ {
+    var tag = "r" +x+ "c"+y;
+    currentID = tag.id;
+    currentPosX = currentID[1];
+    currentPosY = currentID[3];
+    //console.log(currentID);
+    document.getElementById(tag).style.backgroundColor="red";
+ }
