@@ -69,11 +69,15 @@ function specifickey(event)
         //console.log(player);
         player= level[y][x];
         console.log(player);
+<<<<<<< Updated upstream
         xx=x+1;
         yy=y+1;
         var tag ="r"+yy+"c"+xx;
         console.log(tag);
         document.getElementById(tag).style.backgroundColor="red";
+=======
+        // document.player.backgroundColor="red";
+>>>>>>> Stashed changes
             }
     else if(z=="A" || z=="a")
     {
@@ -84,9 +88,13 @@ function specifickey(event)
         var tag ="r"+yy+"c"+xx;
         player= level[y][x];
         console.log(player);
+<<<<<<< Updated upstream
         console.log(tag);
         document.getElementById(tag).style.backgroundColor="red";
         //document.getElementById().style.backgroundColor="red";
+=======
+        // document.player.backgroundColor="red";
+>>>>>>> Stashed changes
     }
     else if(z=="W" || z=="w")
     {
@@ -97,9 +105,13 @@ function specifickey(event)
         var tag ="r"+yy+"c"+xx;
         player= level[y][x];
         console.log(player);
+<<<<<<< Updated upstream
         console.log(tag);
         document.getElementById(tag).style.backgroundColor="red";
         //document.getElementById("player").style.backgroundColor="red";
+=======
+        // document.player.style.backgroundColor="red";
+>>>>>>> Stashed changes
     }
     else if(z=="S" || z=="s")
     {
@@ -110,9 +122,13 @@ function specifickey(event)
         var tag ="r"+yy+"c"+xx;
         player= level[y][x];
         console.log(player);
+<<<<<<< Updated upstream
         console.log(tag);
         document.getElementById(tag).style.backgroundColor="red";
         //document.getElementById("player").style.backgroundColor="red";
+=======
+        // document.player.b.style.backgroundColor="red";
+>>>>>>> Stashed changes
     }
     //console.log(currentID);
     //console.log(y+""+x);
