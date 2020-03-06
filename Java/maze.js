@@ -11,6 +11,7 @@ var level=
 //console.log(player);
 //var key =false;//Flag
 var x,y,temp;
+var winner =15;
 var player=  level[2][2];
     var Nplayer= player;
     var currentID,currentPosX,currentPosY;
@@ -53,6 +54,10 @@ var temp2= level[x][y];
  //var x,y,temp3;
  //temp3=0;
 var xx,yy;
+function checkWinner()
+{
+    
+}
 function specifickey(event)
 {
     
@@ -79,6 +84,7 @@ function specifickey(event)
         var tag ="r"+yy+"c"+xx;
         player= level[y][x];
         console.log(player);
+        console.log(tag);
         document.getElementById(tag).style.backgroundColor="red";
         //document.getElementById().style.backgroundColor="red";
     }
@@ -91,6 +97,7 @@ function specifickey(event)
         var tag ="r"+yy+"c"+xx;
         player= level[y][x];
         console.log(player);
+        console.log(tag);
         document.getElementById(tag).style.backgroundColor="red";
         //document.getElementById("player").style.backgroundColor="red";
     }
@@ -103,11 +110,12 @@ function specifickey(event)
         var tag ="r"+yy+"c"+xx;
         player= level[y][x];
         console.log(player);
+        console.log(tag);
         document.getElementById(tag).style.backgroundColor="red";
         //document.getElementById("player").style.backgroundColor="red";
     }
-    console.log(currentID);
-    console.log(y+""+x);
+    //console.log(currentID);
+    //console.log(y+""+x);
     if(player == "wall")
   {
       life-=1;
@@ -119,20 +127,62 @@ function specifickey(event)
         alert("you lose!");
         location.reload();
     }
-   /* for (a=0;x<5;x++)
+    if(player==level[4][0])
     {
-        for(b=0;y<5;y++)
+        var timer = player;
+        for (var a=1;a<6;a++)
+    {
+        for(var b=1;b<6;b++)
         {
-            player=level[b][a];
+            player=level[a-1][b-1];
+            console.log("player"+player)
             var win=player;
-            var marker = "r"+y+"c"+x;
+            var marker = "r"+a+"c"+b;
+            console.log("marker"+win);
             var temper =document.getElementById(marker).style.backgroundColor;
-            if(win != "wall" && temper =="white")
+            
+            
+            
+           
+            if(temper == "red")
+            {
+                winner -= 1;
+            }
+        }
+        
+    }
+    win = timer;
+    console.log("winner"+winner);
+    console.log("player"+player);
+    if(win != "wall" && winner ==0)
+    {
+        alert("you Win");
+    }
+    }
+    /*
+    for (var a=1;a<=6;a++)
+    {
+        for(var b=1;b<6;b++)
+        {
+            player=level[a-1][b-1];
+            var win=player;
+            var marker = "r"+a+"c"+b;
+            console.log(marker);
+            var temper =document.getElementById(marker).style.backgroundColor;
+            
+            console.log(winner);
+            if(win != "wall" && winner ==0)
             {
                 alert("you Win");
             }
+            if(temper == "red")
+            {
+                winner -= 1;
+                break;break;
+            }
         }
-    }*/
+    }
+    */
 }
 
  function identify(x)
@@ -141,6 +191,6 @@ function specifickey(event)
     currentID = tag.id;
     currentPosX = currentID[1];
     currentPosY = currentID[3];
-    //console.log(currentID);
+    console.log(currentID);
     document.getElementById(tag).style.backgroundColor="red";
  }
