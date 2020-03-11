@@ -1,18 +1,22 @@
-//level1
+//level2
 var level= 
 [
-    ["wall","2","3","4","5"],
-    ["6","7","wall","wall","10"],
-    ["11","wall","13","14","15"],
-    ["16","wall","18","19","wall"],
-    ["21","wall","wall","wall","wall"]
+    ["1", "wall", "wall", "4", "wall", "6", "7", "8"],
+    ["9", "10", "wall", "12", "wall", "14", "15", "16"],
+    ["17", "18", "wall", "20", "wall", "wall", "23", "24"],
+    ["25", "26", "27", "28", "29", "wall", "31", "32"],
+    ["wall", "wall", "wall", "36", "37", "38", "39", "40"],
+    ["wall", "42", "43", "44", "45", "46", "wall", "wall"],
+    ["wall", "50", "51", "52", "53", "54", "55", "56"],
+    ["wall", "58", "59", "60", "61", "62", "63", "64"],
 ];
 //var player=  level[2][2];
 //console.log(player);
 //var key =false;//Flag
 var x,y,temp;
-var winner =15;
-var player=  level[2][2];
+var winner =48;
+var player=  level[0][0];
+document.getElementById("r1c1").style.backgroundColor="red";
     var Nplayer= player;
     var currentID,currentPosX,currentPosY;
 temp=0;
@@ -22,34 +26,40 @@ var life= 3;
 function game()
 {
  document.getElementById("life").innerHTML ="3 lives";
- document.getElementById("r3c3").style.backgroundColor = "red";
+ document.getElementById("r1c1").style.backgroundColor = "red";
 
 var temp2= level[x][y]; 
  document.body.style.backgroundColor ="blue";
 //makes walls black
- if (temp2 == "wall")
-        {
+ 
    //key = false;
-    document.getElementsByName("level1")[0].style.backgroundColor="black";
-    document.getElementsByName("level1")[1].style.backgroundColor="black";
-    document.getElementsByName("level1")[2].style.backgroundColor="black";
-    document.getElementsByName("level1")[3].style.backgroundColor="black";
-    document.getElementsByName("level1")[4].style.backgroundColor="black";
-    document.getElementsByName("level1")[5].style.backgroundColor="black";
-    document.getElementsByName("level1")[6].style.backgroundColor="black";
-    document.getElementsByName("level1")[7].style.backgroundColor="black";
-    document.getElementsByName("level1")[8].style.backgroundColor="black";
-    document.getElementsByName("level1")[9].style.backgroundColor="black";
+    document.getElementsByName("level2")[0].style.backgroundColor="black";
+    document.getElementsByName("level2")[1].style.backgroundColor="black";
+    document.getElementsByName("level2")[2].style.backgroundColor="black";
+    document.getElementsByName("level2")[3].style.backgroundColor="black";
+    document.getElementsByName("level2")[4].style.backgroundColor="black";
+    document.getElementsByName("level2")[5].style.backgroundColor="black";
+    document.getElementsByName("level2")[6].style.backgroundColor="black";
+    document.getElementsByName("level2")[7].style.backgroundColor="black";
+    document.getElementsByName("level2")[8].style.backgroundColor="black";
+    document.getElementsByName("level2")[9].style.backgroundColor="black";
+    document.getElementsByName("level2")[10].style.backgroundColor="black";
+    document.getElementsByName("level2")[11].style.backgroundColor="black";
+    document.getElementsByName("level2")[12].style.backgroundColor="black";
+    document.getElementsByName("level2")[13].style.backgroundColor="black";
+    document.getElementsByName("level2")[14].style.backgroundColor="black";
+    document.getElementsByName("level2")[15].style.backgroundColor="black";
+    document.getElementById("r1c2").style.backgroundColor = "black";
     //alert("you hit a wall now you have 1 less life");
-        }
+       
   if(player == "wall")
   {
       life-=1;
       alert("you hit a wall, lose 1 life");
       document.getElementById("life").innerText= life;
   }
-        x=2;
-        y=2;
+        x=0;
+        y=0;
 }
  //var x,y,temp3;
  //temp3=0;
@@ -127,8 +137,8 @@ function specifickey(event)
         alert("You lose!");
         location.reload();
     }
-    if(player==level[4][0])
-    {
+    //if(player==level[0][7])
+    //{
         var timer = player;
         for (var a=1;a<6;a++)
     {
@@ -158,7 +168,7 @@ function specifickey(event)
     {
         alert("You Win!");
     }
-    }
+    //}
     /*
     for (var a=1;a<=6;a++)
     {
