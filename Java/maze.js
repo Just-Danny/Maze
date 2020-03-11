@@ -23,12 +23,11 @@ function game()
 {
  document.getElementById("life").innerHTML ="3 lives";
  document.getElementById("r3c3").style.backgroundColor = "red";
-
+document.getElementById("r5c1").style.backgroundColor ="green";
 var temp2= level[x][y]; 
  document.body.style.backgroundColor ="blue";
 //makes walls black
- if (temp2 == "wall")
-        {
+ 
    //key = false;
     document.getElementsByName("level1")[0].style.backgroundColor="black";
     document.getElementsByName("level1")[1].style.backgroundColor="black";
@@ -41,7 +40,7 @@ var temp2= level[x][y];
     document.getElementsByName("level1")[8].style.backgroundColor="black";
     document.getElementsByName("level1")[9].style.backgroundColor="black";
     //alert("you hit a wall now you have 1 less life");
-        }
+        
   if(player == "wall")
   {
       life-=1;
