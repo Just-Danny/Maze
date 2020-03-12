@@ -14,7 +14,7 @@ var level=
 //console.log(player);
 //var key =false;//Flag
 var x,y,temp;
-var winner =48;
+var winner = 47;
 var player=  level[0][0];
 document.getElementById("r1c1").style.backgroundColor="red";
     var Nplayer= player;
@@ -49,7 +49,7 @@ var temp2= level[x][y];
     document.getElementsByName("level2")[13].style.backgroundColor="black";
     document.getElementsByName("level2")[14].style.backgroundColor="black";
     document.getElementsByName("level2")[15].style.backgroundColor="black";
-    document.getElementById("r1c2").style.backgroundColor = "black";
+    document.getElementsByName("level2")[16].style.backgroundColor="black";
     //alert("you hit a wall now you have 1 less life");
        
   if(player == "wall")
@@ -137,17 +137,17 @@ function specifickey(event)
         alert("You lose!");
         location.reload();
     }
-    //if(player==level[0][7])
-    //{
-        var timer = player;
-        for (var a=1;a<6;a++)
+    if(player==level[0][7])
     {
-        for(var b=1;b<6;b++)
+        var timer = player;
+        for (var a = 1; a <= 8; a++)
+    {
+        for(var b = 1; b <= 8; b++)
         {
             player=level[a-1][b-1];
             console.log("player"+player)
             var win=player;
-            var marker = "r"+a+"c"+b;
+            var marker = "r"+b+"c"+a;
             console.log("marker"+win);
             var temper =document.getElementById(marker).style.backgroundColor;
             
@@ -204,3 +204,4 @@ function specifickey(event)
     console.log(currentID);
     document.getElementById(tag).style.backgroundColor="red";
  }
+}
