@@ -14,7 +14,9 @@ var level=
 //console.log(player);
 //var key =false;//Flag
 var x,y,temp;
+// This has to be changed to the amount of white tiles in the maze.
 var winner = 47;
+// This also has to be changed to which tile the player will start at.
 var player=  level[0][0];
 document.getElementById("r1c1").style.backgroundColor="red";
     var Nplayer= player;
@@ -26,6 +28,7 @@ var life= 3;
 function game()
 {
  document.getElementById("life").innerHTML ="3 lives";
+// This also has to be changed to which tile the player will start at. 
  document.getElementById("r1c1").style.backgroundColor = "red";
 
 var temp2= level[x][y]; 
@@ -137,11 +140,14 @@ function specifickey(event)
         alert("You lose!");
         location.reload();
     }
+    // This has to be changed to where the programmer wants to assign te ending spot to be. To tell the playe that they have won.
     if(player==level[0][7])
     {
         var timer = player;
+        // These have to be changed to the number of rows and columns of the maze. 
         for (var a = 1; a <= 8; a++)
     {
+        // These have to be changed to the number of rows and columns of the maze. 
         for(var b = 1; b <= 8; b++)
         {
             player=level[a-1][b-1];
